@@ -8,139 +8,385 @@
   <title>Como Criar Meus Filhos no Tempo de Hoje</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f8f4ed;
-      color: #333;
-      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f5ef;
+      color: #263238;
     }
 
-    .topo {
-      background: #6b8e23;
+    .hero {
+      background: linear-gradient(135deg, #315c3a, #79a66a);
       color: white;
-      padding: 35px 20px;
-    }
-
-    .topo h1 {
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    .topo p {
-      font-size: 18px;
-    }
-
-    .capa {
-      margin: 30px auto;
-      max-width: 350px;
-      background: linear-gradient(135deg, #d9ead3, #fff8e7);
-      border-radius: 20px;
-      padding: 35px 20px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
-    .capa h2 {
-      color: #4f6f1c;
-      font-size: 27px;
-    }
-
-    .familia {
-      font-size: 70px;
-      margin: 20px;
-    }
-
-    .conteudo {
-      max-width: 700px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .beneficios {
-      background: white;
-      border-radius: 18px;
-      padding: 25px;
-      margin-top: 25px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-      text-align: left;
-    }
-
-    .beneficios h2 {
+      padding: 55px 20px 70px;
       text-align: center;
-      color: #5f7f20;
     }
 
-    .beneficios p {
-      font-size: 17px;
+    .hero h1 {
+      max-width: 800px;
+      margin: 0 auto 18px;
+      font-size: 42px;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      font-size: 20px;
       line-height: 1.6;
     }
 
-    .botao {
-      display: inline-block;
-      margin: 30px 0;
-      padding: 18px 35px;
-      background: #e99b25;
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-      border-radius: 12px;
+    .container {
+      max-width: 1050px;
+      margin: -35px auto 0;
+      padding: 0 20px 50px;
     }
 
-    .rodape {
-      background: #4f6f1c;
+    .ebook {
+      background: white;
+      border-radius: 24px;
+      padding: 35px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .capa {
+      min-height: 470px;
+      border-radius: 18px;
+      background: linear-gradient(160deg, #e8f1df, #fff3d6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .familia {
+      font-size: 85px;
+      margin-bottom: 20px;
+    }
+
+    .capa h2 {
+      color: #315c3a;
+      font-size: 30px;
+      line-height: 1.2;
+      margin: 10px 0 20px;
+    }
+
+    .capa p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .autor {
+      margin-top: 25px;
+      font-weight: bold;
+      color: #315c3a;
+    }
+
+    .oferta h2 {
+      font-size: 31px;
+      color: #315c3a;
+      margin-top: 0;
+    }
+
+    .oferta p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .lista {
+      padding: 0;
+      list-style: none;
+    }
+
+    .lista li {
+      margin: 15px 0;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .botao {
+      display: block;
+      background: #f2a900;
       color: white;
-      padding: 25px;
-      margin-top: 30px;
+      text-decoration: none;
+      text-align: center;
+      padding: 19px 20px;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 28px;
+      box-shadow: 0 6px 0 #c98500;
+      transition: 0.2s;
+    }
+
+    .botao:hover {
+      transform: translateY(3px);
+      box-shadow: 0 3px 0 #c98500;
+    }
+
+    .secao {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .secao h2 {
+      color: #315c3a;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px 20px;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .card .icone {
+      font-size: 42px;
+    }
+
+    .card h3 {
+      color: #315c3a;
+    }
+
+    .card p {
+      line-height: 1.5;
+      color: #555;
+    }
+
+    .chamada {
+      background: #315c3a;
+      color: white;
+      padding: 55px 20px;
+      text-align: center;
+    }
+
+    .chamada h2 {
+      font-size: 32px;
+      margin-top: 0;
+    }
+
+    .chamada p {
+      font-size: 18px;
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .botao-final {
+      display: inline-block;
+      background: #f2a900;
+      color: white;
+      text-decoration: none;
+      padding: 18px 35px;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 25px;
+    }
+
+    footer {
+      background: #203d28;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 750px) {
+
+      .hero h1 {
+        font-size: 31px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .ebook {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .capa {
+        min-height: 400px;
+      }
+
+      .capa h2 {
+        font-size: 26px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .oferta h2 {
+        font-size: 27px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="topo">
+  <section class="hero">
     <h1>Como Criar Meus Filhos no Tempo de Hoje</h1>
-    <p>Orientação, amor e princípios para educar os filhos nos dias atuais.</p>
-  </div>
-
-  <div class="capa">
-    <div class="familia">👨‍👩‍👦</div>
-
-    <h2>COMO CRIAR MEUS FILHOS NO TEMPO DE HOJE</h2>
 
     <p>
       Um guia para pais e responsáveis que desejam educar seus filhos
-      com amor, sabedoria e bons princípios.
+      com amor, orientação e bons princípios.
     </p>
+  </section>
 
-    <strong>Márcio Iraquitan</strong>
-  </div>
 
-  <div class="conteudo">
+  <main class="container">
 
-    <div class="beneficios">
-      <h2>📖 O que você encontrará neste ebook?</h2>
+    <section class="ebook">
 
-      <p>✅ Orientações para a educação dos filhos nos dias atuais.</p>
+      <div class="capa">
 
-      <p>✅ Como fortalecer o relacionamento entre pais e filhos.</p>
+        <div class="familia">👨‍👩‍👦</div>
 
-      <p>✅ Como estabelecer limites com amor.</p>
+        <h2>
+          COMO CRIAR MEUS FILHOS
+          NO TEMPO DE HOJE
+        </h2>
 
-      <p>✅ Princípios para uma educação mais consciente.</p>
+        <p>
+          Orientação, amor e princípios para educar
+          os filhos nos dias atuais.
+        </p>
 
-      <p>✅ Reflexões para ajudar sua família no dia a dia.</p>
+        <div class="autor">
+          Márcio Iraquitan
+        </div>
+
+      </div>
+
+
+      <div class="oferta">
+
+        <h2>
+          Educar um filho é uma grande responsabilidade.
+        </h2>
+
+        <p>
+          Os tempos mudaram e os desafios da educação
+          também. Este ebook foi preparado para ajudar
+          pais e responsáveis a refletirem sobre como
+          educar seus filhos nos dias atuais.
+        </p>
+
+        <ul class="lista">
+
+          <li>✅ Como fortalecer o relacionamento entre pais e filhos</li>
+
+          <li>✅ Como estabelecer limites com amor</li>
+
+          <li>✅ Como lidar com os desafios dos tempos atuais</li>
+
+          <li>✅ Princípios para uma educação mais consciente</li>
+
+          <li>✅ Reflexões para ajudar sua família no dia a dia</li>
+
+        </ul>
+
+        <a
+          class="botao"
+          href="https://pay.kiwify.com.br/ug4RHqY"
+        >
+          🛒 QUERO COMPRAR
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <section class="secao">
+
+    <h2>O que você encontrará no ebook?</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icone">❤️</div>
+        <h3>Amor</h3>
+        <p>
+          Aprenda a fortalecer os vínculos
+          dentro da família.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icone">👨‍👩‍👦</div>
+        <h3>Família</h3>
+        <p>
+          Reflexões para melhorar a convivência
+          entre pais e filhos.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icone">📚</div>
+        <h3>Educação</h3>
+        <p>
+          Orientações para enfrentar os desafios
+          da educação nos dias atuais.
+        </p>
+      </div>
+
     </div>
 
-    
-     🛒 QUERO COMPRAR  href="https://pay.kiwify.com.br/ug4RHqY">
+  </section>
+
+
+  <section class="chamada">
+
+    <h2>Comece hoje a transformar a educação dos seus filhos.</h2>
+
+    <p>
+      Tenha acesso ao ebook e encontre novas ideias
+      para ajudar sua família a crescer com amor,
+      orientação e princípios.
+    </p>
+
+    <a
+      class="botao-final"
+      href="https://pay.kiwify.com.br/ug4RHqY"
+    >
+      🛒 QUERO COMPRAR
     </a>
 
-  </div>
+  </section>
 
-  <div class="rodape">
-    <p>Transforme a educação dos seus filhos com amor, orientação e princípios.</p>
-  </div>
+
+  <footer>
+    © 2026 — Como Criar Meus Filhos no Tempo de Hoje<br>
+    Márcio Iraquitan
+  </footer>
 
 </body>
 </html>
